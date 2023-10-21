@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.5s ease;
+}
+
+.warning{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #373737;
+    font-size: 1rem;
+    padding: 20px 0;
+}
+
+header {
+    width: 100%;
+}
+
+header nav{
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    background-color: #343434;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+header nav a{
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    padding: 14px 0;
+    z-index: 1;
+    width: 100%;
+    font-size: 1.4rem;
+    border: 2px solid #000;
+    border-top-width: 0;
+    border-bottom-width: 4px;
+    transition: all 0.5s ease;
+}
+
+header nav::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(90deg, #1976d2 0 calc(20vw - 3px), #f57c00 0 calc(40vw - 6px), #d32f2f 0 calc(60vw - 10px), #388e3c 0 calc(80vw - 13px), #7b1fa2 0 100vw);
+    animation: scroll-progress linear;
+    animation-timeline: scroll(root);
+}
+
+@keyframes scroll-progress {
+    100% {
+        width: 100%;
+    }
+}
+
+header nav a:nth-child(2):hover{
+    background-color: #f57c00;
+}
+
+header nav a:nth-child(3):hover{
+    background-color: #d32f2f;
+}
+
+header nav a:nth-child(4):hover{
+    background-color: #388e3c;
+}
+
+header nav a:nth-child(5):hover{
+    background-color: #7b1fa2;
+}
+
+div.section{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+    color: #fff;
+    border-bottom: 3px solid #000;
+    font-size: 4rem;
+}
+
+div.section p{
+    font-size: 1.25rem;
+}
+
+div#html{
+    background-color: #1976d2;
+}
+
+div#css{
+    background-color: #f57c00;
+}
+
+div#js{
+    background-color: #d32f2f;
+}
+
+div#php{
+    background-color: #388e3c;
+}
+
+div#sql{
+    background-color: #7b1fa2;
+}
+
+.hint{
+    position: fixed;
+    top: calc(50vh - 15px);
+    right: 20px;
+    width: 30px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hint i{
+    font-size: 3rem;
+    color: #fff;
+}
+
+.hint::after{
+    content: "Scroll";
+    position: absolute;
+    right: 2.5rem;
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: bold;
+    bottom: 0.6rem;
+}
+@media screen and (max-width: 580px) {
+    
+    header nav a{
+        font-size: 1.2rem;
+    }
+
+    .hint::after{
+        content: "";
+    }
+
+}
